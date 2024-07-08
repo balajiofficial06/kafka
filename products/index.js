@@ -3,6 +3,7 @@ const productRouter = require("./router/productRouter");
 const mongoose = require("mongoose");
 
 const app = express();
+app.use(express.json());
 
 app.use(productRouter);
 

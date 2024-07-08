@@ -36,6 +36,6 @@ const productSchema = new mongoose.Schema({
   },
 });
 
-const prodcutModel = mongoose.model("prodcutModel", productSchema);
+const prodcutModel = mongoose.model("products", productSchema);
 
 module.exports = prodcutModel;
