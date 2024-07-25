@@ -1,11 +1,11 @@
 const express = require("express");
-const productRouter = require("./router/productRouter");
+const cartRouter = require("./router/cartRouter");
 const mongoose = require("mongoose");
 
 const app = express();
 app.use(express.json());
 
-app.use(productRouter);
+app.use(cartRouter);
 
 mongoose
   .connect("mongodb://mongo:27017/ecommers")
@@ -16,6 +16,6 @@ mongoose
     console.log("database is not connected");
   });
 
-app.listen(5000, () => {
-  console.log("app is listeting to 5000");
+app.listen(6000, () => {
+  console.log("app is listeting to 6000");
 });

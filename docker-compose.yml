@@ -1,4 +1,4 @@
-version: "0.0.1"
+version: "3"
 
 services:
   mongo:
@@ -7,6 +7,20 @@ services:
       - data-volume:/data/db
     ports:
       - "27017:27017"
+
+  products:
+    build:
+      context: ./products
+      dockerfile: Dockerfile
+    volumes:
+      - ./products:/products
+
+    container_name: products-service
+
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
 
 volumes:
   data-volume:
